@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Play, BookOpen, Users, Award } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/korean-hero.jpg";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
@@ -36,11 +38,24 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" variant="hero" className="text-lg px-8 py-4">
+            <Button 
+              size="lg" 
+              variant="hero" 
+              className="text-lg px-8 py-4"
+              onClick={() => navigate('/quiz')}
+            >
               <Play className="mr-2 h-5 w-5" />
               Começar Grátis
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="text-lg px-8 py-4"
+              onClick={() => {
+                const modulesSection = document.getElementById('modules');
+                modulesSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               <BookOpen className="mr-2 h-5 w-5" />
               Ver Módulos
             </Button>

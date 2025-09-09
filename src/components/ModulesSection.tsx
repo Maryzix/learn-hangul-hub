@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 import { 
   BookOpen, 
   Headphones, 
@@ -7,8 +8,7 @@ import {
   Users, 
   Clock, 
   Star,
-  ArrowRight,
-  Trophy
+  ArrowRight
 } from "lucide-react";
 
 const modules = [
@@ -24,36 +24,12 @@ const modules = [
     color: "from-green-400 to-green-600",
     icon: BookOpen,
     progress: 0
-  },
-  {
-    level: "Intermediário",
-    title: "Conversação e Gramática",
-    description: "Desenvolva habilidades de conversação e entenda estruturas gramaticais",
-    lessons: 35,
-    duration: "6-8 semanas",
-    rating: 4.8,
-    students: 1920,
-    topics: ["Partículas", "Verbos", "Tempos Verbais", "Honoríficos"],
-    color: "from-blue-400 to-blue-600",
-    icon: Headphones,
-    progress: 0
-  },
-  {
-    level: "Avançado",
-    title: "Fluência e Cultura",
-    description: "Domine expressões idiomáticas e aspectos culturais coreanos",
-    lessons: 40,
-    duration: "8-10 semanas",
-    rating: 4.9,
-    students: 1240,
-    topics: ["Expressões", "Cultura", "Literatura", "Negócios"],
-    color: "from-purple-400 to-purple-600",
-    icon: PenTool,
-    progress: 0
   }
 ];
 
 const ModulesSection = () => {
+  const navigate = useNavigate();
+  
   return (
     <section id="modules" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -123,26 +99,17 @@ const ModulesSection = () => {
                 </div>
 
                 {/* Action Button */}
-                <Button className="w-full btn-primary group-hover:shadow-lg transition-shadow" variant="hero">
+                <Button 
+                  className="w-full btn-primary group-hover:shadow-lg transition-shadow" 
+                  variant="hero"
+                  onClick={() => navigate('/quiz')}
+                >
                   Começar Módulo
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
             );
           })}
-        </div>
-
-        {/* Learning Path */}
-        <div className="card-learning p-8 text-center">
-          <Trophy className="h-16 w-16 text-primary mx-auto mb-4" />
-          <h3 className="text-2xl font-bold mb-4">Trilha de Aprendizado Personalizada</h3>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Nossa IA adapta o conteúdo ao seu ritmo e estilo de aprendizado, 
-            garantindo progresso constante e motivação.
-          </p>
-          <Button size="lg" className="btn-primary" variant="hero">
-            Criar Minha Trilha
-          </Button>
         </div>
       </div>
     </section>
