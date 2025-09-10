@@ -15,260 +15,75 @@ import {
   Home
 } from "lucide-react";
 
-const quizData = [
-  // Vogais básicas
-  {
-    question: "Qual é o som da vogal 'ㅏ'?",
-    korean: "ㅏ",
-    romanization: "a",
-    options: ["a", "e", "i", "o"],
-    correct: 0,
-    type: "vowel"
-  },
-  {
-    question: "Qual é o som da vogal 'ㅓ'?",
-    korean: "ㅓ",
-    romanization: "eo",
-    options: ["a", "eo", "u", "i"],
-    correct: 1,
-    type: "vowel"
-  },
-  {
-    question: "Qual é o som da vogal 'ㅗ'?",
-    korean: "ㅗ",
-    romanization: "o",
-    options: ["u", "o", "a", "i"],
-    correct: 1,
-    type: "vowel"
-  },
-  {
-    question: "Qual é o som da vogal 'ㅜ'?",
-    korean: "ㅜ",
-    romanization: "u",
-    options: ["o", "a", "u", "e"],
-    correct: 2,
-    type: "vowel"
-  },
-  {
-    question: "Qual é o som da vogal 'ㅡ'?",
-    korean: "ㅡ",
-    romanization: "eu",
-    options: ["i", "eu", "a", "o"],
-    correct: 1,
-    type: "vowel"
-  },
-  {
-    question: "Qual é o som da vogal 'ㅣ'?",
-    korean: "ㅣ",
-    romanization: "i",
-    options: ["u", "e", "i", "a"],
-    correct: 2,
-    type: "vowel"
-  },
-  // Vogais duplas
-  {
-    question: "Qual é o som da vogal dupla 'ㅑ'?",
-    korean: "ㅑ",
-    romanization: "ya",
-    options: ["ya", "yeo", "yo", "yu"],
-    correct: 0,
-    type: "vowel"
-  },
-  {
-    question: "Qual é o som da vogal dupla 'ㅕ'?",
-    korean: "ㅕ",
-    romanization: "yeo",
-    options: ["ya", "yeo", "yo", "yu"],
-    correct: 1,
-    type: "vowel"
-  },
-  {
-    question: "Qual é o som da vogal dupla 'ㅛ'?",
-    korean: "ㅛ",
-    romanization: "yo",
-    options: ["ya", "yeo", "yo", "yu"],
-    correct: 2,
-    type: "vowel"
-  },
-  {
-    question: "Qual é o som da vogal dupla 'ㅠ'?",
-    korean: "ㅠ",
-    romanization: "yu",
-    options: ["ya", "yeo", "yo", "yu"],
-    correct: 3,
-    type: "vowel"
-  },
-  // Consoantes básicas
-  {
-    question: "Qual é o som da consoante 'ㄱ'?",
-    korean: "ㄱ",
-    romanization: "g/k",
-    options: ["g/k", "n", "d/t", "r/l"],
-    correct: 0,
-    type: "consonant"
-  },
-  {
-    question: "Qual é o som da consoante 'ㄴ'?",
-    korean: "ㄴ",
-    romanization: "n",
-    options: ["m", "n", "ng", "r"],
-    correct: 1,
-    type: "consonant"
-  },
-  {
-    question: "Qual é o som da consoante 'ㄷ'?",
-    korean: "ㄷ",
-    romanization: "d/t",
-    options: ["g/k", "n", "d/t", "r/l"],
-    correct: 2,
-    type: "consonant"
-  },
-  {
-    question: "Qual é o som da consoante 'ㄹ'?",
-    korean: "ㄹ",
-    romanization: "r/l",
-    options: ["g/k", "n", "d/t", "r/l"],
-    correct: 3,
-    type: "consonant"
-  },
-  {
-    question: "Qual é o som da consoante 'ㅁ'?",
-    korean: "ㅁ",
-    romanization: "m",
-    options: ["m", "b/p", "s", "ng"],
-    correct: 0,
-    type: "consonant"
-  },
-  {
-    question: "Qual é o som da consoante 'ㅂ'?",
-    korean: "ㅂ",
-    romanization: "b/p",
-    options: ["m", "b/p", "s", "j"],
-    correct: 1,
-    type: "consonant"
-  },
-  {
-    question: "Qual é o som da consoante 'ㅅ'?",
-    korean: "ㅅ",
-    romanization: "s",
-    options: ["sh", "s", "ch", "k"],
-    correct: 1,
-    type: "consonant"
-  },
-  {
-    question: "Qual é o som da consoante 'ㅇ'?",
-    korean: "ㅇ",
-    romanization: "ng/silent",
-    options: ["n", "ng/silent", "m", "r"],
-    correct: 1,
-    type: "consonant"
-  },
-  {
-    question: "Qual é o som da consoante 'ㅈ'?",
-    korean: "ㅈ",
-    romanization: "j",
-    options: ["ch", "j", "k", "t"],
-    correct: 1,
-    type: "consonant"
-  },
-  {
-    question: "Qual é o som da consoante 'ㅊ'?",
-    korean: "ㅊ",
-    romanization: "ch",
-    options: ["ch", "j", "s", "sh"],
-    correct: 0,
-    type: "consonant"
-  },
-  {
-    question: "Qual é o som da consoante 'ㅋ'?",
-    korean: "ㅋ",
-    romanization: "k",
-    options: ["g", "k", "t", "p"],
-    correct: 1,
-    type: "consonant"
-  },
-  {
-    question: "Qual é o som da consoante 'ㅍ'?",
-    korean: "ㅍ",
-    romanization: "p",
-    options: ["b", "p", "f", "v"],
-    correct: 1,
-    type: "consonant"
-  },
-  {
-    question: "Qual é o som da consoante 'ㅎ'?",
-    korean: "ㅎ",
-    romanization: "h",
-    options: ["h", "k", "s", "sh"],
-    correct: 0,
-    type: "consonant"
-  },
-  // Palavras simples com vogais duplas
-  {
-    question: "Como se lê a palavra '야구' (baseball)?",
-    korean: "야구",
-    romanization: "yagu",
-    options: ["yagu", "yeagu", "yogu", "yugu"],
-    correct: 0,
-    type: "word"
-  },
-  {
-    question: "Como se lê a palavra '여자' (mulher)?",
-    korean: "여자",
-    romanization: "yeoja",
-    options: ["yaja", "yeoja", "yoja", "yuja"],
-    correct: 1,
-    type: "word"
-  },
-  {
-    question: "Como se lê a palavra '요리' (culinária)?",
-    korean: "요리",
-    romanization: "yori",
-    options: ["yari", "yeori", "yori", "yuri"],
-    correct: 2,
-    type: "word"
-  },
-  {
-    question: "Como se lê a palavra '유리' (vidro)?",
-    korean: "유리",
-    romanization: "yuri",
-    options: ["yari", "yeori", "yori", "yuri"],
-    correct: 3,
-    type: "word"
-  },
-  {
-    question: "Como se lê a palavra '가방' (bolsa)?",
-    korean: "가방",
-    romanization: "gabang",
-    options: ["gabang", "kagag", "gabong", "kagong"],
-    correct: 0,
-    type: "word"
-  },
-  {
-    question: "Como se lê a palavra '나무' (árvore)?",
-    korean: "나무",
-    romanization: "namu",
-    options: ["namo", "namu", "nomu", "namu"],
-    correct: 1,
-    type: "word"
-  },
-  {
-    question: "Como se lê a palavra '다리' (perna/ponte)?",
-    korean: "다리",
-    romanization: "dari",
-    options: ["dali", "dari", "tari", "tali"],
-    correct: 1,
-    type: "word"
-  },
-  {
-    question: "Como se lê a palavra '라면' (lámen)?",
-    korean: "라면",
-    romanization: "ramyeon",
-    options: ["lamyeon", "ramyeon", "ramyen", "lamyen"],
-    correct: 1,
-    type: "word"
-  }
+// Vogais
+const vogaisData = [
+  { question: "Qual é a vogal ㅏ?", options: ["a","o","ó"], answer:"a", audio:"/audio/vogais/vogal_a.mp3" },
+  { question: "Qual é a vogal ㅑ?", options: ["ya","i","u"], answer:"ya", audio:"/audio/vogais/vogal_ya.mp3" },
+  { question: "Qual é a vogal ㅓ?", options: ["eo","a","e"], answer:"eo", audio:"/audio/vogais/vogal_eo.mp3" },
+  { question: "Qual é a vogal ㅕ?", options: ["yeo","yo","yu"], answer:"yeo", audio:"/audio/vogais/vogal_yeo.mp3" },
+  { question: "Qual é a vogal ㅗ?", options: ["o","u","a"], answer:"o", audio:"/audio/vogais/vogal_o.mp3" },
+  { question: "Qual é a vogal ㅛ?", options: ["yo","yu","ya"], answer:"yo", audio:"/audio/vogais/vogal_yo.mp3" },
+  { question: "Qual é a vogal ㅜ?", options: ["u","o","eu"], answer:"u", audio:"/audio/vogais/vogal_u.mp3" },
+  { question: "Qual é a vogal ㅠ?", options: ["yu","ya","yo"], answer:"yu", audio:"/audio/vogais/vogal_yu.mp3" },
+  { question: "Qual é a vogal ㅡ?", options: ["eu","u","i"], answer:"eu", audio:"/audio/vogais/vogal_eu.mp3" },
+  { question: "Qual é a vogal ㅣ?", options: ["i","a","eo"], answer:"i", audio:"/audio/vogais/vogal_i.mp3" },
+  { question: "Qual é a vogal ㅘ?", options: ["wa","wo","wu"], answer:"wa", audio:"/audio/vogais/vogal_wa.mp3" },
+  { question: "Qual é a vogal ㅝ?", options: ["we","wo","wa"], answer:"we", audio:"/audio/vogais/vogal_we.mp3" },
+  { question: "Qual é a vogal ㅙ?", options: ["wae","we","wa"], answer:"wae", audio:"/audio/vogais/vogal_wae.mp3" },
+  { question: "Qual é a vogal ㅞ?", options: ["we","wa","wo"], answer:"we", audio:"/audio/vogais/vogal_we2.mp3" },
+  { question: "Qual é a vogal ㅚ?", options: ["oe","we","wa"], answer:"oe", audio:"/audio/vogais/vogal_oe.mp3" },
+  { question: "Qual é a vogal ㅟ?", options: ["wi","we","wu"], answer:"wi", audio:"/audio/vogais/vogal_wi.mp3" }
 ];
+
+// Consoantes + vogais
+const consVogaisRaw = [
+  { c:"ㄱ", p:"ga" }, { c:"ㄴ", p:"na" }, { c:"ㄷ", p:"da" }, { c:"ㄹ", p:"ra" },
+  { c:"ㅁ", p:"ma" }, { c:"ㅂ", p:"ba" }, { c:"ㅅ", p:"sa" }, { c:"ㅇ", p:"nga" },
+  { c:"ㅈ", p:"ja" }, { c:"ㅊ", p:"cha" }, { c:"ㅋ", p:"ka" }, { c:"ㅌ", p:"ta" },
+  { c:"ㅍ", p:"pa" }, { c:"ㅎ", p:"ha" }
+];
+
+const consVogaisData = consVogaisRaw.map((item, index) => ({
+  question: `Qual é o som de ${item.c}?`,
+  options: [item.p, "ma", "ka", "sa"],
+  answer: item.p,
+  audio: `/audio/consoantes/cons_${item.p}.mp3`
+}));
+
+// Frases com 이에요/예요
+const frasesData = [
+  { question: "저는 학생 ___", translation: "Eu sou aluno", options:["이에요","예요"], answer:"이에요", audio:"/audio/frases/eu_sou_aluno.mp3" },
+  { question: "저는 브라질 사람이 ___", translation: "Eu sou brasileiro", options:["이에요","예요"], answer:"이에요", audio:"/audio/frases/eu_sou_brasileiro.mp3" },
+  { question: "저는 학생 ___", translation: "Eu sou estudante", options:["이에요","예요"], answer:"이에요", audio:"/audio/frases/eu_sou_estudante.mp3" },
+  { question: "제 이름은 마리아 ___", translation: "Meu nome é Maria", options:["이에요","예요"], answer:"예요", audio:"/audio/frases/meu_nome_e_maria.mp3" },
+  { question: "그는 제 친구 ___", translation: "Ele é meu amigo", options:["이에요","예요"], answer:"예요", audio:"/audio/frases/ele_e_meu_amigo.mp3" },
+  { question: "그녀는 선생님 ___", translation: "Ela é professora", options:["이에요","예요"], answer:"이에요", audio:"/audio/frases/ela_e_professora.mp3" },
+  { question: "당신은 학생 ___", translation: "Você é estudante", options:["이에요","예요"], answer:"이에요", audio:"/audio/frases/voce_e_estudante.mp3" },
+  { question: "이것은 책 ___", translation: "Isto é um livro", options:["이에요","예요"], answer:"이에요", audio:"/audio/frases/isto_e_um_livro.mp3" },
+  { question: "이것은 펜 ___", translation: "Isto é uma caneta", options:["이에요","예요"], answer:"이에요", audio:"/audio/frases/isto_e_uma_caneta.mp3" },
+  { question: "그는 제 선생님 ___", translation: "Ele é meu professor", options:["이에요","예요"], answer:"이에요", audio:"/audio/frases/ele_e_meu_professor.mp3" },
+  { question: "그녀는 제 친구 ___", translation: "Ela é minha amiga", options:["이에요","예요"], answer:"예요", audio:"/audio/frases/ela_e_minha_amiga.mp3" },
+  { question: "이것은 쉬워요", translation: "Isso é fácil", options:["이에요","예요"], answer:"예요", audio:"/audio/frases/isso_e_facil.mp3" },
+  { question: "이것은 어려워요", translation: "Isso é difícil", options:["이에요","예요"], answer:"예요", audio:"/audio/frases/isso_e_dificil.mp3" },
+  { question: "저는 행복해요", translation: "Eu sou feliz", options:["이에요","예요"], answer:"예요", audio:"/audio/frases/eu_sou_feliz.mp3" },
+  { question: "저는 슬퍼요", translation: "Eu sou triste", options:["이에요","예요"], answer:"예요", audio:"/audio/frases/eu_sou_triste.mp3" },
+  { question: "당신은 제 친구 ___", translation: "Você é meu amigo", options:["이에요","예요"], answer:"예요", audio:"/audio/frases/voce_e_meu_amigo.mp3" },
+  { question: "그녀는 제 선생님 ___", translation: "Ela é minha professora", options:["이에요","예요"], answer:"이에요", audio:"/audio/frases/ela_e_minha_professora.mp3" },
+  { question: "이것은 개 ___", translation: "Isto é um cachorro", options:["이에요","예요"], answer:"예요", audio:"/audio/frases/isto_e_um_cachorro.mp3" },
+  { question: "이것은 고양이에요", translation: "Isto é um gato", options:["이에요","예요"], answer:"예요", audio:"/audio/frases/isto_e_um_gato.mp3" },
+  { question: "그는 학생 ___", translation: "Ele é estudante", options:["이에요","예요"], answer:"이에요", audio:"/audio/frases/ele_e_estudante.mp3" },
+  { question: "그녀는 학생 ___", translation: "Ela é estudante", options:["이에요","예요"], answer:"이에요", audio:"/audio/frases/ela_e_estudante.mp3" },
+  { question: "당신은 브라질 사람이 ___", translation: "Você é brasileiro", options:["이에요","예요"], answer:"이에요", audio:"/audio/frases/voce_e_brasileiro.mp3" },
+  { question: "저는 선생님 ___", translation: "Eu sou professor", options:["이에요","예요"], answer:"이에요", audio:"/audio/frases/eu_sou_professor.mp3" },
+  { question: "저는 의사 ___", translation: "Eu sou médica", options:["이에요","예요"], answer:"예요", audio:"/audio/frases/eu_sou_medica.mp3" },
+  { question: "이것은 재미있어요", translation: "Isso é interessante", options:["이에요","예요"], answer:"예요", audio:"/audio/frases/isso_e_interessante.mp3" },
+  { question: "이것은 중요해요", translation: "Isso é importante", options:["이에요","예요"], answer:"예요", audio:"/audio/frases/isso_e_importante.mp3" },
+  { question: "저는 한국인이 ___", translation: "Eu sou coreano", options:["이에요","예요"], answer:"이에요", audio:"/audio/frases/eu_sou_coreano.mp3" },
+  { question: "저는 브라질 사람이 ___", translation: "Eu sou brasileira", options:["이에요","예요"], answer:"이에요", audio:"/audio/frases/eu_sou_brasileira.mp3" },
+  { question: "그는 제 형 ___", translation: "Ele é meu irmão", options:["이에요","예요"], answer:"예요", audio:"/audio/frases/ele_e_meu_irmao.mp3" }
+] as Array<{question: string; translation?: string; options: string[]; answer: string; audio: string}>;
+
+const quizData = [...vogaisData, ...consVogaisData, ...frasesData] as Array<{question: string; translation?: string; options: string[]; answer: string; audio: string}>;
 
 const Quiz = () => {
   const navigate = useNavigate();
@@ -284,7 +99,10 @@ const Quiz = () => {
     setSelectedAnswer(answerIndex);
     setShowResult(true);
     
-    if (answerIndex === quizData[currentQuestion].correct) {
+    const correctAnswerIndex = quizData[currentQuestion].options.findIndex(
+      option => option === quizData[currentQuestion].answer
+    );
+    if (answerIndex === correctAnswerIndex) {
       setScore(score + 1);
     }
   };
@@ -308,7 +126,10 @@ const Quiz = () => {
   };
 
   const playAudio = () => {
-    console.log(`Playing audio: ${quizData[currentQuestion].korean}`);
+    console.log(`Playing audio: ${quizData[currentQuestion].audio}`);
+    // Aqui você pode implementar a reprodução real do áudio
+    // const audio = new Audio(quizData[currentQuestion].audio);
+    // audio.play();
   };
 
   const goHome = () => {
@@ -359,11 +180,19 @@ const Quiz = () => {
     );
   }
 
+  const getQuestionType = () => {
+    const currentQ = quizData[currentQuestion];
+    if (currentQ.question.includes('vogal')) return 'vowel';
+    if (currentQ.question.includes('som de')) return 'consonant';
+    if (currentQ.translation) return 'phrase';
+    return 'question';
+  };
+
   const getQuestionTypeColor = (type: string) => {
     switch (type) {
       case 'vowel': return 'from-pink-400 to-pink-600';
       case 'consonant': return 'from-blue-400 to-blue-600';
-      case 'word': return 'from-green-400 to-green-600';
+      case 'phrase': return 'from-green-400 to-green-600';
       default: return 'from-primary to-primary';
     }
   };
@@ -372,7 +201,7 @@ const Quiz = () => {
     switch (type) {
       case 'vowel': return 'Vogal';
       case 'consonant': return 'Consoante';
-      case 'word': return 'Palavra';
+      case 'phrase': return 'Frase';
       default: return 'Questão';
     }
   };
@@ -416,9 +245,9 @@ const Quiz = () => {
             {/* Question Type Badge */}
             <div className="flex justify-between items-center mb-6">
               <Badge variant="secondary" className="font-medium">
-                {getQuestionTypeLabel(quizData[currentQuestion].type)} {currentQuestion + 1}
+                {getQuestionTypeLabel(getQuestionType())} {currentQuestion + 1}
               </Badge>
-              <div className={`w-4 h-4 rounded-full bg-gradient-to-r ${getQuestionTypeColor(quizData[currentQuestion].type)}`} />
+              <div className={`w-4 h-4 rounded-full bg-gradient-to-r ${getQuestionTypeColor(getQuestionType())}`} />
             </div>
 
             {/* Question */}
@@ -427,36 +256,37 @@ const Quiz = () => {
                 {quizData[currentQuestion].question}
               </h3>
               
-              {/* Korean Text with Audio */}
-              <div className="bg-muted rounded-lg p-4 mb-4 inline-block">
-                <div className="flex items-center gap-4">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-1">
-                      {quizData[currentQuestion].korean}
-                    </div>
-                    <div className="text-sm text-muted-foreground">
-                      {quizData[currentQuestion].romanization}
-                    </div>
-                  </div>
-                  <Button 
-                    size="sm" 
-                    variant="ghost" 
-                    onClick={playAudio}
-                    className="p-2"
-                  >
-                    <Volume2 className="h-4 w-4" />
-                  </Button>
-                </div>
+              {/* Translation if available */}
+              {quizData[currentQuestion].translation && (
+                <p className="text-muted-foreground mb-4">
+                  {quizData[currentQuestion].translation}
+                </p>
+              )}
+              
+              {/* Audio Button */}
+              <div className="mb-4">
+                <Button 
+                  size="sm" 
+                  variant="outline" 
+                  onClick={playAudio}
+                  className="gap-2"
+                >
+                  <Volume2 className="h-4 w-4" />
+                  Reproduzir Áudio
+                </Button>
               </div>
             </div>
 
             {/* Answer Options */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {quizData[currentQuestion].options.map((option, index) => {
+                const correctAnswerIndex = quizData[currentQuestion].options.findIndex(
+                  opt => opt === quizData[currentQuestion].answer
+                );
                 let buttonClass = "p-4 text-left border-2 transition-all duration-200 hover:scale-105";
                 
                 if (showResult) {
-                  if (index === quizData[currentQuestion].correct) {
+                  if (index === correctAnswerIndex) {
                     buttonClass += " border-success bg-success/10 text-success";
                   } else if (index === selectedAnswer) {
                     buttonClass += " border-destructive bg-destructive/10 text-destructive";
@@ -478,10 +308,10 @@ const Quiz = () => {
                   >
                     <div className="flex items-center justify-between">
                       <span className="text-lg font-medium">{option}</span>
-                      {showResult && index === quizData[currentQuestion].correct && (
+                      {showResult && index === correctAnswerIndex && (
                         <CheckCircle className="h-5 w-5 text-success" />
                       )}
-                      {showResult && index === selectedAnswer && index !== quizData[currentQuestion].correct && (
+                      {showResult && index === selectedAnswer && index !== correctAnswerIndex && (
                         <XCircle className="h-5 w-5 text-destructive" />
                       )}
                     </div>
