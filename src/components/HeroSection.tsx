@@ -37,7 +37,7 @@ const HeroSection = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
               variant="hero" 
@@ -59,27 +59,6 @@ const HeroSection = () => {
               <BookOpen className="mr-2 h-5 w-5" />
               Ver Módulos
             </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            <div className="card-learning p-6 text-center">
-              <BookOpen className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-2">100+</h3>
-              <p className="text-muted-foreground">Lições Interativas</p>
-            </div>
-            
-            <div className="card-learning p-6 text-center">
-              <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-2">5.000+</h3>
-              <p className="text-muted-foreground">Estudantes Ativos</p>
-            </div>
-            
-            <div className="card-learning p-6 text-center">
-              <Award className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-2">95%</h3>
-              <p className="text-muted-foreground">Taxa de Sucesso</p>
-            </div>
           </div>
         </div>
       </div>
